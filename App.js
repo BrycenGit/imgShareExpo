@@ -8,6 +8,11 @@ import uploadToAnonymousFilesAsync from 'anonymous-files'
 export default function App() {
   const [selectedImage, setSelectedImage] = React.useState(null);
 
+  let unselectImage = () => {
+    setSelectedImage(null);
+    return;
+  }
+
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
@@ -49,6 +54,10 @@ export default function App() {
         />
         <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
           <Text style={styles.buttonText}>Share this photo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={unselectImage} style={styles.button}>
+          <Text style={styles.buttonText}>Unselect Image</Text>
         </TouchableOpacity>
       </View>
     )
