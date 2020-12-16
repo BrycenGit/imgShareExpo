@@ -6,16 +6,14 @@ import logo from './assets/logo.png'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image source={logo} style={imgSize} />
-      <Text style={textStyle}>To share a photo from your phone with a friend, just press the button below!</Text>
+      <Image source={imgURI} style={styles.logo} />
+      <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const imgSize = { width: 305, height: 159 }
-
-const textStyle = {color: '#888', fontSize: 18}
+const imgURI = { uri: "https://i.imgur.com/TkIrScD.png" }
 
 const styles = StyleSheet.create({
   container: {
@@ -24,4 +22,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    width: 305,
+    height: 159,
+    marginBottom: 10,
+  },
+  instructions: {
+    color: '#888',
+    fontSize: 18,
+    marginHorizontal: 15,
+  }, 
 });
